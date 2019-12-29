@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import MyComponent1 from "./MyComponent1";
+import MyComponent2 from "./MyComponent2";
 
 /*
 필요한 패키지 참조하기
@@ -24,7 +26,7 @@ import "./App.css";
  * const App = () => <h1>Hello React</h1>
  */
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -41,8 +43,12 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <h1>Hello React</h1>
+      <MyComponent1 />
+      <MyComponent2 />
     </div>
   );
-}
+};
 
 export default App;
