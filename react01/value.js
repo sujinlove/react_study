@@ -58,3 +58,35 @@ data.a = 100;
 data.b = 200;
 
 console.log(data);
+
+// 배열의 원소들을 개별 변수에 분할하여 할당하기
+const arr = [1, 2, 3];
+const [a, b, c] = arr;
+// const [a, b, c] = [1, 2, 3];
+console.log(a);
+console.log(b);
+console.log(c);
+
+// JSON 객체의 원소들을 개별 변수에 분할하여 할당하기
+const json = { first: "hello", second: "world", third: "react" };
+
+// 원하는 원소만 개별 변수로 추출,
+// 단, json객체의 key와 변수 이름이 동일해야 함.
+const { first, second } = json;
+console.log(first);
+console.log(second);
+
+// json을 파라미터로 받아서 first와 third만 활용하는 함수
+function setJson1(obj) {
+  console.log(obj.first);
+  console.log(obj.third);
+}
+
+setJson1(json);
+
+function setJson2({ first, third }) {
+  console.log(first);
+  console.log(third);
+}
+
+setJson2(json);
