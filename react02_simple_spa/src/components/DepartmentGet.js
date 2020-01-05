@@ -29,7 +29,6 @@ const DepartmentGet = props => {
   const queryString = props.location.search;
   console.log(queryString);
 
-  console.log("test");
   /* Query String을 JSON 객체 형태로 변환  */
   const query = qs.parse(queryString, {
     ignoreQueryPrefix: true // 맨 앞의 "?" 제거 옵션
