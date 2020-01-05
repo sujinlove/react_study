@@ -6,12 +6,13 @@
 */
 import React from "react";
 
-const DepartmentPath = props => {
+//const DepartmentPath = props => {
+const DepartmentPath = ({ match }) => {
   /* 요청 데이터 확인하기 */
   console.group("DepartmnetPath");
 
   // path 파라미터는 propsdml match.params 객체로 내장되어있다.
-  const urlParams = props.match.params;
+  const urlParams = match.params;
   console.log(urlParams);
 
   console.log(
