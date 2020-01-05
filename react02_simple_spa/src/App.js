@@ -6,6 +6,7 @@ import { Route, Link } from "react-router-dom";
 import Home from "./components/Home"; // 각 컴포넌트가 페이지 역할을 할 것임.
 import About from "./components/About";
 import DepartmentGet from "./components/DepartmentGet";
+import DepartmentPath from "./components/DepartmentPath";
 
 const App = () => {
   return (
@@ -20,12 +21,19 @@ const App = () => {
       <Link to="/department_get?deptno=101&msg=hello">[ DepartmentGet 1 ]</Link>
       <Link to="/department_get?deptno=102&msg=world">[ DepartmentGet 2 ]</Link>
 
+      {/* Path 파라미터를 포함하는 링크 구성 */}
+      <Link to="/department_path/201/hello">[ DepartmentPath 1 ]</Link>
+      <Link to="/department_path/202/world">[ DepartmentPath 2 ]</Link>
+
       {/* ------ 페이지로 사용될 컴포넌트들 명시하기 ------ */}
       {/* 첫 페이지로 사용되는 컴포넌트의 경우 exact={true}를 명시해야 한다. */}
 
       <Route path="/" component={Home} exact={true} />
       <Route path="/about" component={About} />
       <Route path="/department_get" component={DepartmentGet} />
+
+      {/* Path 파라미터는 URL 형식에 변수의 위치와 이름을 정해줘야 한다. */}
+      <Route path="/department_path/:deptno/:msg" component={DepartmentPath} />
     </div>
   );
 };
