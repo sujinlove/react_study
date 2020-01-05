@@ -39,6 +39,7 @@ HTML5 에서 Javascript에 추가된 기능 중 history 객체를 통해 URL을 
 - 서버사이드 렌더링 = React + Node / React + PHP / React + Java(Spring)
 
 ### 변수 전달 note
+
 '''
 https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
 https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
@@ -50,6 +51,7 @@ https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
 - javascript에서는 search라는 함수로 변수값을 배열로 받을 수 있다.
 
 '''
+
 <form method="get" action="hello.jsp">
     <input type="text" name="a" />
     <input type="text" name="b" />
@@ -57,6 +59,28 @@ https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
 </form>
 '''
 
-action 속성이 지정된 페이지에 입력값이 전송된다. 
+action 속성이 지정된 페이지에 입력값이 전송된다.
 hello.jsp?a=입력값&b=입력값
 만약 로그인 등 보안이 중요한 페이지의 경우 get방식이 아니라 post방식으로 해야한다.
+
+'''
+const arr = [1, 2, 3, 4, 5];
+const find = 3;
+
+// 배열의 원소 수만큼 콜백함수를 실행함
+arr.forEach(function(v, i) {
+console.log("%d번째 원소 %d",i,v);
+
+// 원소 수 만큼 함수를 호출하는 것이므로
+// 중단을 위해 return 을 해도 해당 원소에 대해서만 적용되기 때문에 모든 원소를 실행함,,,
+// 즉 원소를 다 돌때까지 for문을 중단시킬 수 없다.
+// 하지만 some은 가능함.
+// arr.some(function(v, i) {})
+
+if (find === v) {
+console.log('찾음');
+return;
+}
+});
+
+'''
