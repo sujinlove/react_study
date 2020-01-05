@@ -38,19 +38,18 @@ HTML5 에서 Javascript에 추가된 기능 중 history 객체를 통해 URL을 
 - 하나의 HTML이므로 SEO에 취약하다 ( 서버사이드 렌더링으로 해결 가능 )
 - 서버사이드 렌더링 = React + Node / React + PHP / React + Java(Spring)
 
-### 변수 전달 note
+## 변수 전달 note
 
-'''
+ex)
 https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
 https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
 https://comic.naver.com/webtoon/weekdayList.nhn?week=fri
-'''
 
 - ? 를 기준으로 뒤에오는 문자열은 변수 / ?이름=값&이름=값 ...
 - HTTP GET 파라미터, QueryString 방식이라고 한다.
 - javascript에서는 search라는 함수로 변수값을 배열로 받을 수 있다.
 
-'''
+'''html
 
 <form method="get" action="hello.jsp">
     <input type="text" name="a" />
@@ -63,7 +62,7 @@ action 속성이 지정된 페이지에 입력값이 전송된다.
 hello.jsp?a=입력값&b=입력값
 만약 로그인 등 보안이 중요한 페이지의 경우 get방식이 아니라 post방식으로 해야한다.
 
-'''
+'''js
 const arr = [1, 2, 3, 4, 5];
 const find = 3;
 
@@ -84,3 +83,19 @@ return;
 });
 
 '''
+
+---
+
+### 오늘까지 공부한 내용
+
+1. 리액트 컴포턴트로 페이지 나누기
+2. HTTP GET 파라미터 처리하기
+3. PATH 파라미터 처리하기
+4. 404 에러 대비하기
+
+### 앞으로 공부할 내용
+
+1. NavLink 를 사용하여 현재 머물고 있는 링크에 CSS 적용하기
+   --> 컴포넌트에 css 적용하는 방법 학습 후 공부
+2. History 제어하기
+   --> 컴포넌트 라이프사이클과 hook 학습 후 공부
