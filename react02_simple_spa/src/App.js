@@ -14,6 +14,8 @@ const App = () => {
       <Link to="/">[ Home ]</Link>
       <Link to="/about">[ About ]</Link>
 
+      {}
+
       {/* ------ 페이지로 사용될 컴포넌트들 명시하기 ------ */}
       {/* 첫 페이지로 사용되는 컴포넌트의 경우 exact={true}를 명시해야 한다. */}
 
