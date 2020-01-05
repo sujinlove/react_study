@@ -39,6 +39,7 @@ function App() {
       <Route path="/if1" component={If_1} />
       <Route path="/if2" component={If_2} />
       <Route path="/if3" component={If_3} />
+      <Route path="/if4" component={If_4} />
 
       <Route path="/loop1" component={Loop_1} />
       <Route path="/loop2" component={Loop_2} />
