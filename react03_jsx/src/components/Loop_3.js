@@ -12,7 +12,7 @@ const Loop_3 = () => {
         <tbody>
           <tr>
             {seasons.map((item, index) => {
-              return <td key={IDBIndex}>{item}</td>;
+              return <td key={index}>{item}</td>;
             })}
           </tr>
         </tbody>
