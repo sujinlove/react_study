@@ -1,68 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 컴포넌트 종류
 
-## Available Scripts
+## 클래스 컴포넌트
 
-In the project directory, you can run:
+React 오리지널 컴포넌트
 
-### `yarn start`
+지금까지의 예제들 처럼 함수 형태로 정의하는 것이 아닌 class 형태로 정의하는 컴포넌트.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+함수형 컴포넌트보다 구문이 복잡하고 길다.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+함수형 컴포넌트보다 구문이 좀 더 명확하다.
 
-### `yarn test`
+클래스 안에 통칭 Life Cycle 이라는 미리 정해진 함수들을 통해 화면의 갱신 시점이나
+변수값의 변경 시점에 화면을 어떻게 처리할지 정의할 수 있다.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 함수형 컴포넌트
 
-### `yarn build`
+클래스 컴포넌트보다 구문이 간결하지만 그만큼 더 난해할 수 있다.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+리액트 버전 16이후에 Life Cycle을 처리할 수 있는 hook이라는 기능이 도입되면서,
+리액트에서 공식적으로 권장하는 컴포넌트 작성 방법
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# 컴포넌트의 특성
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## props
 
-### `yarn eject`
+컴포넌트를 사용하는 부모로부터 전달 받는 변수 값
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+흔히 컴포넌트에게 HTML 속성 같은 형태로 전달된다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+props는 값이 변할 수 없다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## children
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+컴포넌트를 사용하는 부모로부터 전달 받는 내용.
 
-## Learn More
+컴포넌트의 시작 -> 끝 태그 사이에 기술되는 내용.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+<MyComponent>여기서 Children 전달</MyComponent>
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## state
 
-### Code Splitting
+컴포넌트 자체적으로 갖는 데이터.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+화면에 표시하고자 하는 데이터 값.
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+앞으로 다루게 될 React의 Life Cycle, Hook, Redux 등의 기법들은 모두 state 값과 연관있다.
