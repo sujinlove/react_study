@@ -3,6 +3,7 @@ import { Route, NavLink, Switch } from "react-router-dom";
 
 import MyProps from "./components/MyProps";
 import MyPropTypes from "./components/MyPropTypes";
+import MyChildren from "./components/MyChildren";
 
 const App = () => {
   const myStyle = {
@@ -22,10 +23,15 @@ const App = () => {
       <NavLink activeStyle={myStyle} to="/myproptypes">
         [ MyPropTypes ]
       </NavLink>
+      <NavLink activeStyle={myStyle} to="/mychidren">
+        [ MyChildren ]
+      </NavLink>
 
       <Switch>
         <Route path="/myprops" component={MyProps} />
         <Route path="/myproptypes" component={MyPropTypes} />
+        <Route path="/mychidren" component={MyChildren} />
+        <Route path="/" />
       </Switch>
     </div>
   );
