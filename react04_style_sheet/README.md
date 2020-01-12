@@ -16,7 +16,7 @@
 4. App.js 파일과 index.js 파일에서 삭제한 파일 관련 구문 삭제
 5. index.js 에서 라우터 구문 추가
 
-   ```
+   ```g
    import { BrowserRouter } from 'react-router-dom';
    ```
 
