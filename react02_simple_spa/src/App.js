@@ -5,6 +5,7 @@ import { Route, Link, Switch } from "react-router-dom";
 
 import Home from "./components/Home"; // 각 컴포넌트가 페이지 역할을 할 것임.
 import About from "./components/About";
+import Main from "./components/Main";
 import DepartmentGet from "./components/DepartmentGet";
 import DepartmentPath from "./components/DepartmentPath";
 import Error404 from "./components/Error404";
@@ -18,6 +19,7 @@ const App = () => {
       <Link to="/">[ Home ]</Link>
       <Link to="/about">[ About (1) ]</Link>
       <Link to="/introduce">[ About (2) ]</Link>
+      <Link to="/main">[ Main (SubRoute) ]</Link>
 
       {/* HTTPS GET 파라미터를 포함하는 링크 구성 ( 한글사용 X ) */}
       <Link to="/department_get?deptno=101&msg=hello">[ DepartmentGet 1 ]</Link>
@@ -34,6 +36,7 @@ const App = () => {
 
         {/* 한페이지에 두 개 이상의 URL을 적용할 경우 배열 형시으로 처리함 */}
         <Route path={["/about", "/introduce"]} component={About} />
+        <Route path="/main" component={Main} />
         <Route path="/department_get" component={DepartmentGet} />
 
         {/* Path 파라미터는 URL 형식에 변수의 위치와 이름을 정해줘야 한다. */}
