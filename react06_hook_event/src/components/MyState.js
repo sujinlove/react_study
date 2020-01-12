@@ -10,6 +10,12 @@ const MyState = () => {
   const [myName, setMyName] = React.useState("");
   const [myPoint, setMyPoint] = React.useState(50);
 
+  /* 이벤트 핸들러로 사용될 함수는 컴포넌트 함수 안에서 정의된다. */
+
+  const handleMyPointChange = e => {
+    setMyPoint(e.currentTarget.value);
+  };
+
   return (
     <div>
       <h2>MyState</h2>
@@ -32,6 +38,19 @@ const MyState = () => {
             // 자기 스스로의 입력값을 myName 이라는 state값에 반영함.
             setMyName(e.currentTarget.value);
           }}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="myPointInput">점수: </label>
+        <input
+          id="myPointInput"
+          type="range"
+          min="0"
+          max="100"
+          value={myPoint}
+          step="1"
+          onChange={handleMyPointChange}
         />
       </div>
     </div>
