@@ -8,7 +8,13 @@ const App = () => {
     <div>
       <h2>hook event</h2>
 
-      <NavLink to="/mystate">MyState</NavLink>
+      <NavLink
+        className="normalLink"
+        activeClassName="activeLink"
+        to="/mystate"
+      >
+        MyState
+      </NavLink>
 
       <Switch>
         <Route path="/mystate" component={MyState} />
