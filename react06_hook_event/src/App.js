@@ -7,6 +7,7 @@ import StateEffectEx from "./components/StateEffectEx";
 import MyReducer1 from "./components/MyReducer1";
 import DateRange1 from "./components/DateRange1";
 import DateRange2 from "./components/DateRange2";
+import MyRef from "./components/MyRef";
 
 const App = () => {
   return (
@@ -60,6 +61,10 @@ const App = () => {
         [ DateRange2 ]
       </NavLink>
 
+      <NavLink className="normalLink" activeClassName="activeLink" to="/myref">
+        [ MyRef ]
+      </NavLink>
+
       <Switch>
         <Route path="/mystate" component={MyState} />
         <Route path="/myeffect" component={MyEffect} />
@@ -67,6 +72,7 @@ const App = () => {
         <Route path="/myreducer1" component={MyReducer1} />
         <Route path="/daterange1" component={DateRange1} />
         <Route path="/daterange2" component={DateRange2} />
+        <Route path="/myref" component={MyRef} />
       </Switch>
     </div>
   );
