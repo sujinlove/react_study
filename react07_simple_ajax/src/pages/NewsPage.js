@@ -20,7 +20,7 @@ const NewsPage = ({ match }) => {
     <div>
       <Category />
       <hr />
-      <NewsList Category={params.category} />
+      <NewsList category={params.category} />
     </div>
   );
 };
