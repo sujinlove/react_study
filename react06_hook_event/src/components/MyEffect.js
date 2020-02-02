@@ -3,6 +3,7 @@ import React from "react";
 const MyEffect = () => {
   const [mySize, setMySize] = React.useState(320);
 
+  /* 1. 매개변수에 [] 배열만 있을때 */
   /* 이 컴포넌트가 막 등장함과 동시에 실행됨 */
   React.useEffect(() => {
     console.log(
@@ -11,6 +12,7 @@ const MyEffect = () => {
     );
   }, []);
 
+  /* 2. 매개변수에 아무것도 없을때 */
   /* 이 컴포넌트가 막 등장할 때와 state, props 값이 변경 될 때마다 매번 실행 됨 */
   React.useEffect(() => {
     console.log(
@@ -19,7 +21,8 @@ const MyEffect = () => {
     );
   });
 
-  /* state 값이 변경되어 화면이 다시 렌더링 되거나, 화면 이동 등의 이유로 이 컴포넌트가 사라질 때 실행 됨*/
+  /* 3. Return 형태 */
+  /* state 값이 변경되어 화면이 다시 렌더링 되거나, 화면 이동 등의 이유로 이 컴포넌트가 사라질 때 실행 됨 */
   React.useEffect(() => {
     return () => {
       console.log(
@@ -29,6 +32,7 @@ const MyEffect = () => {
     };
   });
 
+  /* 4. 매개변수에 hook  변수 선언되는 형태 */
   /* 이 컴포넌트가 막 등장할 때와 특정 state값이 변경 될 때만 실행 됨 */
   React.useEffect(() => {
     console.log("[MyEffect4] %s ::: mySize값이 변경됨", new Date());

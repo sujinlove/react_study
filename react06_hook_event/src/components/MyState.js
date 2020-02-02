@@ -4,7 +4,7 @@ const MyState = () => {
   /* 
   state 값 정의 
   - const [ 변수선언, 변수에 대한 setter 함수] = React.useState(변수의 기본값);
-  - state 값은 직접 변경 할 수 없고, 반드시 setter 함수를 통해서만 변경 가능하다.
+  - state 값은 변경할때에는, 직접 변경은 할 수 없고, 반드시 setter 함수를 통해서만 변경 가능하다.
   */
 
   const [myName, setMyName] = React.useState("");
