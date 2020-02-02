@@ -5,6 +5,8 @@ import MyState from "./components/MyState";
 import MyEffect from "./components/MyEffect";
 import StateEffectEx from "./components/StateEffectEx";
 import MyReducer1 from "./components/MyReducer1";
+import DateRange1 from "./components/DateRange1";
+import DateRange2 from "./components/DateRange2";
 
 const App = () => {
   return (
@@ -42,11 +44,29 @@ const App = () => {
         [ MyReducer1 ]
       </NavLink>
 
+      <NavLink
+        className="normalLink"
+        activeClassName="activeLink"
+        to="/daterange1"
+      >
+        [ DateRange1 ]
+      </NavLink>
+
+      <NavLink
+        className="normalLink"
+        activeClassName="activeLink"
+        to="/daterange2"
+      >
+        [ DateRange2 ]
+      </NavLink>
+
       <Switch>
         <Route path="/mystate" component={MyState} />
         <Route path="/myeffect" component={MyEffect} />
         <Route path="/stateeffectex" component={StateEffectEx} />
         <Route path="/myreducer1" component={MyReducer1} />
+        <Route path="/daterange1" component={DateRange1} />
+        <Route path="/daterange2" component={DateRange2} />
       </Switch>
     </div>
   );
