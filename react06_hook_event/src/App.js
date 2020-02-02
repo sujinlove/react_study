@@ -8,7 +8,8 @@ import MyReducer1 from "./components/MyReducer1";
 import DateRange1 from "./components/DateRange1";
 import DateRange2 from "./components/DateRange2";
 import MyRef from "./components/MyRef";
-import MyCallback from "./components/myCallback";
+import MyCallback from "./components/MyCallback";
+import MyMemo from "./components/MyMemo";
 
 const App = () => {
   return (
@@ -74,6 +75,10 @@ const App = () => {
         [ MyCallback ]
       </NavLink>
 
+      <NavLink className="normalLink" activeClassName="activeLink" to="/mymemo">
+        [ MyMemo ]
+      </NavLink>
+
       <Switch>
         <Route path="/mystate" component={MyState} />
         <Route path="/myeffect" component={MyEffect} />
@@ -83,6 +88,7 @@ const App = () => {
         <Route path="/daterange2" component={DateRange2} />
         <Route path="/myref" component={MyRef} />
         <Route path="/mycallback" component={MyCallback} />
+        <Route path="/mymemo" component={MyMemo} />
       </Switch>
     </div>
   );
