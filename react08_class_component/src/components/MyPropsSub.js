@@ -1,6 +1,13 @@
 import React from "react";
 
 class MyPropsSub extends React.Component {
+  // 속성들에 대한 기본값을 JSON으로 정의해 둘 수 있다. (객체이름 고정)
+  // static 을 이용해 정적으로 선언
+  static defaultProps = {
+    name: "unknown",
+    age: 0
+  };
+
   // 화면에 렌더링할 JSX 내용을 리턴하는 함수
   render() {
     // Component 클래스는 props 라는 멤버변수를 내장한다.
@@ -21,11 +28,5 @@ class MyPropsSub extends React.Component {
     );
   }
 }
-
-// 속성값이 전달되지 않을 경우를 대비하여 기본값을 JSON으로 정의해 둘 수 있다. (객체이름 고정)
-MyPropsSub.defaultProps = {
-  name: "unknown",
-  age: 0
-};
 
 export default MyPropsSub;
