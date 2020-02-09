@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 /**
- * 뉴스카테고리 종룰르 정의
+ * 뉴스카테고리 종류를 정의
  * name: OpenAPI 에 전달할 변수값
  * text: 페이지에 표시할 메뉴명
  */
