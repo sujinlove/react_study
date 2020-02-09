@@ -9,6 +9,8 @@ import MyChildren from "./components/MyChildren";
 import MyState from "./components/MyState"; // hook 의 useState component
 import MyRef from "./components/MyRef";
 
+import MyLifeCycle from "./components/MyLifeCycle";
+
 class App extends React.Component {
   // Inline CSS 를 리턴하기 위한 getter 함수 정의
   get myStyle() {
@@ -45,12 +47,17 @@ class App extends React.Component {
           [ MyRef ]
         </NavLink>
 
+        <NavLink activeStyle={this.myStyle} to="/mylifecycle">
+          [ MyLifeCycle ]
+        </NavLink>
+
         <Switch>
           <Route path="/myprops" component={MyProps} />
           <Route path="/myproptypes" component={MyPropTypes} />
           <Route path="/mychidren" component={MyChildren} />
           <Route path="/mystate" component={MyState} />
           <Route path="/myref" component={MyRef} />
+          <Route path="/mylifecycle" component={MyLifeCycle} />
 
           <Route path="/" />
         </Switch>
