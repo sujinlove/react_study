@@ -42,6 +42,7 @@ class MyRefSub1 extends Component {
           readOnly
         />
 
+        {/* 상태값 출력 */}
         <p>{myMessage}</p>
 
         <button
@@ -50,6 +51,7 @@ class MyRefSub1 extends Component {
             myMessage = "";
             this.setState({ myMessage });
 
+            // 생성된 참조변수를 통해 input 태그에 접근
             this.myInputAreaRef.current.value = "";
             this.myCopyAreaRef.current.value = "";
           }}
