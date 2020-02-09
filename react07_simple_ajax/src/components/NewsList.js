@@ -1,13 +1,12 @@
 import React from "react";
 import { contents } from "../data/NewsContents";
-import NewsItems from "./NewsItem";
 import NewsItem from "./NewsItem";
 import axios from "axios";
 
 const NewsList = ({ category }) => {
   console.group("NewsList");
-  console.debug({ category });
-  console.debug({ contents });
+  console.debug(category);
+  console.debug(contents);
   console.groupEnd();
 
   // newsData 라는 상태값을 생성 --> 초기값은 원소의 수가 0개인 배열
@@ -26,7 +25,7 @@ const NewsList = ({ category }) => {
       setLoading(true);
 
       // Ajax 연동 -> async가 명시된 함수 안에서 비동기 처리 앞에 "await"를 선언
-      const result = await axios.get("https:..newsapi.org/v2/top-headlines", {
+      const result = await axios.get("https://newsapi.org/v2/top-headlines", {
         params: {
           country: "kr",
           apiKey: "d74ed56bbd494d7786fac94b207f549d",
