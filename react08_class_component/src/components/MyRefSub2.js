@@ -30,6 +30,7 @@ class MyRefSub2 extends Component {
             // current 라는 속성을 통해서 DOM에 접근한다.
             // 참조변수가 있을때는 this.myCopyAreaRef.current 가 input 태그를 가리킨 반면에
             // 없을때는 this.myCopyAreaRef 가 input 태그를 가리킴
+            // 즉, 콜백함수로 직접 정의한 참조변수는 그 자체가 DOM을 가리킴
             this.myCopyAreaRef.value = myMessage;
           }}
         />
