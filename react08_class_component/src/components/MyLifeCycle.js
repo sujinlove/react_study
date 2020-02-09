@@ -56,6 +56,10 @@ class MyLifeCycle extends Component {
    *
    */
 
+  componentDidMount() {
+    console.log("[Mount] (4) componentDidMount가 실행되었습니다.");
+  }
+
   /**
    * [Update] (2) 컴포넌트 상태가 변경되어 화면이 갱신되기 직전에 호출된다,.
    * 즉 update 상태에서 render() 함수가 실행되기 직전에 호출된다
@@ -106,10 +110,6 @@ class MyLifeCycle extends Component {
    */
   componentWillUnmount(prevProps, prevState) {
     console.log("[Unmount] (4) componentWillUnmount 실행되었습니다.");
-  }
-
-  componentDidMount() {
-    console.log("[Mount] (4) componentDidMount가 실행되었습니다.");
   }
 
   render() {
