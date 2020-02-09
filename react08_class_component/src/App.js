@@ -11,6 +11,8 @@ import MyRef from "./components/MyRef";
 
 import MyLifeCycle from "./components/MyLifeCycle";
 
+import Department from "./components/Department";
+
 class App extends React.Component {
   // Inline CSS 를 리턴하기 위한 getter 함수 정의
   get myStyle() {
@@ -51,6 +53,10 @@ class App extends React.Component {
           [ MyLifeCycle ]
         </NavLink>
 
+        <NavLink activeStyle={this.myStyle} to="/department">
+          [ Department ]
+        </NavLink>
+
         <Switch>
           <Route path="/myprops" component={MyProps} />
           <Route path="/myproptypes" component={MyPropTypes} />
@@ -58,6 +64,7 @@ class App extends React.Component {
           <Route path="/mystate" component={MyState} />
           <Route path="/myref" component={MyRef} />
           <Route path="/mylifecycle" component={MyLifeCycle} />
+          <Route path="/department" component={Department} />
 
           <Route path="/" />
         </Switch>
