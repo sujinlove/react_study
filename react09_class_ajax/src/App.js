@@ -1,25 +1,29 @@
 import React from "react";
 import { Route, NavLink, Switch } from "react-router-dom";
+import NewsPage from "./pages/NewsPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/*
+프로그램 본체 
+
+아래의 구조로 연결됨.
+App -- (route) --> NewsPage --> Category
+                            --> NewsList --> NewsItem
+*/
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>09-class-Ajax</h1>
+
+        <Switch>
+          {/* Path 파라미터로 카테고리 값을 받는 페이지 구성 */}
+          {/* :/변수이름? 에서 ? 는 해당변수가 선택적이라는 의미 */}
+          <Route path="/:category?" component={NewsPage} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
