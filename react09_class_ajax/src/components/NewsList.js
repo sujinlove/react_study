@@ -10,7 +10,19 @@ class NewsList extends React.Component {
     loading: false // ajax 연동 전, 후를 판단하기 위한 boolean값
   };
 
-  // 컴포넌트가 화면에 표시될 때 실행되는 라이프 사이클 메서드 ( 데이터 불러오기 )
+  /*
+  최초 화면은 componentDidMount 로 인해서 그려진다.
+  하지만 메뉴를 선택하면 화면은 그대로 남는다
+  이를 수정하기 위해서 componentDidUpdate를 이용해
+  갱신 될 때마다 화면을 그리도록 하면 무한루프 에러가 발생된다.
+
+  이를 어떻게 해결해야 할까?
+
+  --> 아래에 componentDidUpdate 확인!
+
+  */
+
+  /* 컴포넌트가 화면에 표시될 때 실행되는 라이프 사이클 메서드 ( 데이터 불러오기 ) */
   componentDidMount() {
     console.log("componentDidMount");
 
@@ -38,6 +50,21 @@ class NewsList extends React.Component {
     };
 
     getNewList();
+  }
+
+  /**
+   * 컴호넌트 상태가 변경될 때 자동으로 호출되는 함수.
+   * 이전 속성 값 (prevProps)나 이전 상태값 (prevState) 가 현재 값과 달라질 때에만
+   * 처리하도록 if 문을 사용해야 한다.
+   * useEffect와 같은 효과
+   * @param {} prevProps
+   * @param {*} prevState
+   */
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.category !== this.props.category) {
+      this.componentDidMount();
+    }
   }
 
   render() {
