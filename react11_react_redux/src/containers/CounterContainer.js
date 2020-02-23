@@ -9,7 +9,7 @@ import { plusAction, minusAction } from "../modules/counter";
 
 /**
  * 스토어로부터 상태값고ㅑ 모듈에 정의된 state 값과 action 함수들을 전달받는 컴포넌트
- * module = {number: 0, color: '#000', plusAction: f, minusAction:f }
+ * module = {number: 0, color: "#000", plusAction: ƒ, minusAction: ƒ}
  * @param {} module
  */
 

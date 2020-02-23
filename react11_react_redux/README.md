@@ -103,3 +103,11 @@ export default MyMiddleWare;
 미들웨어 내부에서 store.dispatch를 사용하면 첫 번째 미들웨어부터 다시 처리한다.
 
 만약 미들웨어에서 next(action)을 사용하지 않으면 액션이 리듀서에 전달되지 않는다.
+
+## 일반적으로 많이 사용하는 오픈소스 미들웨어
+
+- redux-logger : 브라우저 콘솔에 로그를 기록하는 기능
+- redux-thunk : 비동기 작업을 위한 미들웨어 ( 주로 Timer, Ajax 등 )
+- redux-saga : 비동기 작업을 위한 미들웨어 ( 주로 Timer, Ajax 등 )
+
+> redux-thunk와 redux-saga 는 서로 경쟁상태
