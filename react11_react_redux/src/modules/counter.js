@@ -10,7 +10,7 @@ import { createAction, handleActions } from "redux-actions";
  */
 
 const PLUS = "Counter/PLUS";
-const MINUS = "Counter/PLUS";
+const MINUS = "Counter/MINUS";
 
 /**
  * 2) 액션 생성 함수 = 액션 객체를 만들어서 리턴한다.
@@ -36,7 +36,7 @@ const initialState = {
  * 각각의 action값을 메서드로 갖는 객체 형태로 정의한다.
  * 각각의 메서드는 initialState와 동일한 구조를 갖는 객체를 리턴해야 한다.
  */
-const myCounterReducer = {
+const myCountReducer = {
   [PLUS]: function(state, action) {
     const numberValue = state.number + 1;
     let colorValue = "#000";
@@ -47,10 +47,7 @@ const myCounterReducer = {
       colorValue = "#f60";
     }
 
-    return {
-      number: numberValue,
-      color: colorValue
-    };
+    return { number: numberValue, color: colorValue };
   },
   [MINUS]: function(state, action) {
     const numberValue = state.number - 1;
@@ -62,10 +59,7 @@ const myCounterReducer = {
       colorValue = "#f60";
     }
 
-    return {
-      number: numberValue,
-      color: colorValue
-    };
+    return { number: numberValue, color: colorValue };
   }
 };
 
@@ -75,7 +69,7 @@ const myCounterReducer = {
  * 이 객체를 /index.js가 import하여 스토어로 생성한다.
  */
 
-const MyCounterModule = handleActions(myCounterReducer, initialState);
+const MyCounterModule = handleActions(myCountReducer, initialState);
 
 // 생성된 스토어를 내보낸다.
 export default MyCounterModule;
