@@ -4,6 +4,8 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
+/* 리덕스를 위한 참조 추가 */
+
 // 리덕스에서 스토어 생성 함수와 미들웨어 처리 함수 가져오기
 import { createStore, applyMiddleware } from "redux";
 
@@ -21,19 +23,17 @@ import ReduxThunk from "redux-thunk";
 /* 리덕스 스토어에 등록시킬 모듈들 일괄 참조 */
 // modules 폴더 (직접 생성해야함) 에 정의된 모든 action 과 action 생성 함수 및 초기 상태값들을 묶음으로 가져온다.
 import { rootReducer } from "./modules";
-
-/* 리덕스 스토어 생성 */
-// 로그를 생성하는 미들웨어 객체 만들기 --> 다른 미들웨어들 보다 우선적으로 적용하는 것이 좋다.
 const logger = createLogger();
 
-// --> 미들웨어가 크롬개발자 도구 연동을 적용한 스토어 생성 ( 개발용 코드, 완성 후 기본코드로 전환 필요 )
+// --> 미들웨어가 크로 ㅁ개발자 도구 연동을 적용한 스토어 생성 ( 개발용 코드, 완성 후 기본코드로 전환 필요 )
 const store = createStore(
-  rooktReducer,
+  rootReducer,
   composeWithDevTools(applyMiddleware(logger, ReduxThunk))
 );
 
+// 스토어 구독 처리 추가 <Provider></Provider>
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
