@@ -8,7 +8,7 @@ import { combineReducers } from "redux";
 
 // 같은 폴더에 있는 counter.js를 counterModule 이라는 이름으로 가져옴.
 // -> 필요에 따라 모듈들을 지속적으로 가져온다.
-import counterModule from "./counter";
+import * as counterModule from "../modules/counter";
 
 // 가져온 모듈을 index.js에서 스토어에 등록하기 위해 하나로 통합
 const rootReducer = combineReducers({
