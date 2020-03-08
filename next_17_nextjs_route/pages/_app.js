@@ -1,4 +1,6 @@
 import App from "next/app";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 /**
  * 모든 페이지들에게 적용되는 공통 컴포넌트,
@@ -13,7 +15,13 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    return (
+      <div>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    );
   }
 }
 
